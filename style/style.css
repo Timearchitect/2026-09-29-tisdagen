@@ -1,0 +1,109 @@
+:root{
+      --themeColor: antiqueWhite;
+}
+*{
+  left:0;
+}
+/* 
+använd variabeln ,themeColor */
+body{
+    background-color: var(--themeColor)
+}
+/* har socials i footern  */
+footer{
+    width: 100vw;
+    background-color: aquamarine;
+    position: fixed;
+    bottom:0px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body{
+        --themeColor: rgb(131, 126, 70);
+    }
+    img{
+        filter: brightness(0.1);
+    }
+}
+main{
+position: relative;}
+/* li{
+    display: inline;
+    padding: 1rem;
+} */
+
+ul{
+    padding: 1rem;
+    background-color: rgb(237, 218, 255);
+    list-style-type:none;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-around;
+}
+a{ 
+    text-transform:uppercase;
+    color:red;
+    text-decoration:none;
+}
+#flex{
+    padding: 1rem;
+    margin: auto;
+    background-color: rgb(191, 124, 8);
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items;
+    gap:1rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+#flex::after{
+    content: "FLEX-BOXEN";
+    position: absolute;
+    top: -10rem;
+    left: 30rem;
+    color: grey;
+}
+.items{
+    padding: 1rem;
+    background-color: blue;
+    color: white;
+}
+.items::before{
+    content: "item";
+    position: relative;
+    top: 0;
+    color: white;
+}
+#grid{
+    background-color: brown;
+    width: 50%;
+    margin:auto;
+    display: grid;
+      /* 3x3 grid */
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows:  200px 200px 200px;
+    gap: 1rem;
+    align-items: stretch;
+}
+#grid::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "Before pseudo elementet";
+    padding: 1rem;
+}
+/* varannan */
+#grid div:nth-child(2n){
+    background-color: red ;
+}
+/* var tredje */
+#grid div:nth-child(3n){
+border: dashed 0.2rem cyan;}
+
+/* sista barnet */
+#grid div:last-child{
+    background-color: rgb(0, 255, 26) ;
+}
